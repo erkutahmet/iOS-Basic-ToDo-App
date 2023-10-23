@@ -9,4 +9,11 @@ import Foundation
 
 class TasksDaoRepository {
     
+    func saveTask(taskName: String) {
+        print("Task Saved: \(taskName)")
+    }
+    
+    func updateTask(taskId: Int, taskName: String) {
+        print("Task Updated: \(taskId) - \(taskName)")
+    }
 }

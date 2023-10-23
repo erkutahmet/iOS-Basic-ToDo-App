@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lks-qO-ky1">
+                            <searchBar contentMode="redraw" placeholder="Search a task..." translatesAutoresizingMaskIntoConstraints="NO" id="lks-qO-ky1">
                                 <rect key="frame" x="0.0" y="155" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -118,6 +118,9 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Update">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateButtonClicked:" destination="nzV-YN-Pme" eventType="touchUpInside" id="BMt-PJ-Gcx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TKS-2L-ApQ"/>
@@ -132,6 +135,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="Agu-jQ-fEA"/>
+                    <connections>
+                        <outlet property="updateTaskTextField" destination="M5D-gy-dv4" id="u32-gW-CFx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiZ-9k-If5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,6 +165,9 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Save">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="1jA-St-dl5" eventType="touchUpInside" id="XGD-0z-dKT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GIS-gy-P1Q"/>
@@ -175,6 +184,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Task" id="hCi-5i-a8x"/>
+                    <connections>
+                        <outlet property="newTaskTextField" destination="JRO-31-JcE" id="0Jp-Zq-kjq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYb-bP-kKn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

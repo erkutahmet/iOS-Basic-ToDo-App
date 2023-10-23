@@ -9,4 +9,9 @@ import Foundation
 
 class DetailPageViewModel {
     
+    var tRepo = TasksDaoRepository()
+    
+    func updateTask(taskId: Int, taskName: String) {
+        tRepo.updateTask(taskId: taskId, taskName: taskName)
+    }
 }

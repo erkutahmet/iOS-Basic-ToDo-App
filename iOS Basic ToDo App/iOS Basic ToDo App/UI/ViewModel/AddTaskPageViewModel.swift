@@ -9,4 +9,9 @@ import Foundation
 
 class AddTaskPageViewModel {
     
+    var tRepo = TasksDaoRepository()
+    
+    func saveTask(taskName: String) {
+        tRepo.saveTask(taskName: taskName)
+    }
 }

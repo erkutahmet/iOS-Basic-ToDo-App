@@ -9,8 +9,19 @@ import UIKit
 
 class AddTaskPage: UIViewController {
 
+    @IBOutlet weak var newTaskTextField: UITextField!
+
+    let addTaskVM = AddTaskPageViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    @IBAction func saveButtonClicked(_ sender: Any) {
+        if let taskName = newTaskTextField.text {
+            addTaskVM.saveTask(taskName: taskName)
+            navigationController?.popToRootViewController(animated: true)
+        }
     }
 }
