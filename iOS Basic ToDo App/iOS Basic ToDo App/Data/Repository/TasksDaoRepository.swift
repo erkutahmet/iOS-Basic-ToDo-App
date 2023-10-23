@@ -16,4 +16,12 @@ class TasksDaoRepository {
     func updateTask(taskId: Int, taskName: String) {
         print("Task Updated: \(taskId) - \(taskName)")
     }
+    
+    func deleteTask(taskId: Int) {
+        print("\(taskId) -> deleted!")
+    }
+    
+    func searchTask(searchText: String) {
+        print("-> \(searchText)")
+    }
 }

@@ -14,6 +14,8 @@ class HomePage: UIViewController {
     
     var tasksList = [Tasks]()
     
+    var homePageVM = HomePageViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -23,6 +25,7 @@ class HomePage: UIViewController {
     private func setUI() {
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
+        taskSearchBar.delegate = self
     }
     
     private func setData() {
@@ -66,5 +69,43 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
                 toVC.task = data
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contextualAction, view, bool in
+            let task = self.tasksList[indexPath.row]
+            
+            let alert = UIAlertController(title: "Delete Task!", message: "Are you sure to delete? \n(\(task.name!))", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alert.addAction(cancelAction)
+            
+            let okayAction = UIAlertAction(title: "Okay", style: .destructive) { action in
+                self.homePageVM.deleteTask(taskId: task.id!)
+            }
+            alert.addAction(okayAction)
+            
+            self.present(alert, animated: true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let doneAction = UIContextualAction(style: .normal, title: "Complete") { contextualAction, view, bool in
+            let task = self.tasksList[indexPath.row]
+            self.homePageVM.deleteTask(taskId: task.id!)
+        }
+        doneAction.backgroundColor = UIColor.green
+        
+        return UISwipeActionsConfiguration(actions: [doneAction])
+    }
+}
+
+extension HomePage: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        homePageVM.searchTask(searchText: searchText)
     }
 }
