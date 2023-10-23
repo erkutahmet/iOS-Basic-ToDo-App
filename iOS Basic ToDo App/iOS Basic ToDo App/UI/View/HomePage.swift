@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomePage: UIViewController {
 
@@ -19,27 +20,21 @@ class HomePage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        homePageVM.uploadTasks()
     }
     
     private func setUI() {
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
         taskSearchBar.delegate = self
-    }
-    
-    private func setData() {
-        let t1 = Tasks(id: 1, name: "Feed dog")
-        let t2 = Tasks(id: 2, name: "Write some code.")
-        let t3 = Tasks(id: 3, name: "Make food")
-        let t4 = Tasks(id: 4, name: "Go shopping")
-        let t5 = Tasks(id: 5, name: "Seen a doctor")
         
-        tasksList.append(t1)
-        tasksList.append(t2)
-        tasksList.append(t3)
-        tasksList.append(t4)
-        tasksList.append(t5)
+        _ = homePageVM.tasksList.subscribe(onNext: { list in
+            self.tasksList = list
+            self.tasksTableView.reloadData()
+        })
     }
 }
 
@@ -52,7 +47,7 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
         let cell = tasksTableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
         
         cell.titleLabel.text = "Task - \(indexPath.row + 1)"
-        cell.contentLabel.text = tasksList[indexPath.row].name
+        cell.contentLabel.text = tasksList[indexPath.row].task_name
         
         return cell
     }
@@ -76,13 +71,13 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contextualAction, view, bool in
             let task = self.tasksList[indexPath.row]
             
-            let alert = UIAlertController(title: "Delete Task!", message: "Are you sure to delete? \n(\(task.name!))", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Delete Task!", message: "Are you sure to delete? \n(\(task.task_name!))", preferredStyle: .alert)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             alert.addAction(cancelAction)
             
             let okayAction = UIAlertAction(title: "Okay", style: .destructive) { action in
-                self.homePageVM.deleteTask(taskId: task.id!)
+                self.homePageVM.deleteTask(taskId: task.task_id!)
             }
             alert.addAction(okayAction)
             
@@ -96,7 +91,7 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
         
         let doneAction = UIContextualAction(style: .normal, title: "Complete") { contextualAction, view, bool in
             let task = self.tasksList[indexPath.row]
-            self.homePageVM.deleteTask(taskId: task.id!)
+            self.homePageVM.deleteTask(taskId: task.task_id!)
         }
         doneAction.backgroundColor = UIColor.green
         

@@ -8,15 +8,15 @@
 import Foundation
 
 class Tasks {
-    var id: Int?
-    var name: String?
+    var task_id: Int?
+    var task_name: String?
     
     init() {
         
     }
     
-    init(id: Int, name: String) {
-        self.id = id
-        self.name = name
+    init(task_id: Int, task_name: String) {
+        self.task_id = task_id
+        self.task_name = task_name
     }
 }

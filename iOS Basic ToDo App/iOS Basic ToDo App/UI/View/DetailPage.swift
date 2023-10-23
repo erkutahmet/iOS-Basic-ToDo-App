@@ -22,7 +22,7 @@ class DetailPage: UIViewController {
     
     private func setUP() {
         if let t = task {
-            updateTaskTextField.text = t.name
+            updateTaskTextField.text = t.task_name
         }
     }
     
@@ -32,7 +32,7 @@ class DetailPage: UIViewController {
             
             if task_name != String() {
                 let tName = taskName.trimmingCharacters(in: .whitespaces)
-                detailVM.updateTask(taskId: t.id!, taskName: tName)
+                detailVM.updateTask(taskId: t.task_id!, taskName: tName)
                 navigationController?.popToRootViewController(animated: true)
             } else {
                 let alertController = UIAlertController(title: "Error", message: "Please check fields!", preferredStyle: .alert)

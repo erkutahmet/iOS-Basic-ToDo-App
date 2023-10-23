@@ -6,10 +6,16 @@
 //
 
 import Foundation
+import RxSwift
 
 class HomePageViewModel {
-    
     var tRepo = TasksDaoRepository()
+    var tasksList = BehaviorSubject<[Tasks]>(value: [Tasks]())
+    
+    init() {
+        tasksList = tRepo.tasksList
+        uploadTasks()
+    }
     
     func deleteTask(taskId: Int) {
         tRepo.deleteTask(taskId: taskId)
@@ -17,5 +23,9 @@ class HomePageViewModel {
     
     func searchTask(searchText: String) {
         tRepo.searchTask(searchText: searchText)
+    }
+    
+    func uploadTasks() {
+        tRepo.uploadTasks()
     }
 }

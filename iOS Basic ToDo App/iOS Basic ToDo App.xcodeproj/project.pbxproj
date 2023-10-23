@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCBB17412AE6F9D1002D48D7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB17362AE6F9D1002D48D7 /* FMDatabase.m */; };
+		DCBB17422AE6F9D2002D48D7 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB17372AE6F9D1002D48D7 /* FMDatabasePool.m */; };
+		DCBB17432AE6F9D2002D48D7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB17382AE6F9D1002D48D7 /* FMResultSet.m */; };
+		DCBB17442AE6F9D2002D48D7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB17392AE6F9D1002D48D7 /* FMDatabaseAdditions.m */; };
+		DCBB17452AE6F9D2002D48D7 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB17402AE6F9D1002D48D7 /* FMDatabaseQueue.m */; };
+		DCBB17472AE6F9E2002D48D7 /* task.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DCBB17462AE6F9E2002D48D7 /* task.sqlite */; };
 		DCF4B8D02AE5D76300E58C9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4B8CF2AE5D76300E58C9D /* AppDelegate.swift */; };
 		DCF4B8D22AE5D76300E58C9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4B8D12AE5D76300E58C9D /* SceneDelegate.swift */; };
 		DCF4B8D42AE5D76300E58C9D /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4B8D32AE5D76300E58C9D /* HomePage.swift */; };
@@ -29,6 +35,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DCBB17352AE6F9D0002D48D7 /* iOS Basic ToDo App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS Basic ToDo App-Bridging-Header.h"; sourceTree = "<group>"; };
+		DCBB17362AE6F9D1002D48D7 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		DCBB17372AE6F9D1002D48D7 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		DCBB17382AE6F9D1002D48D7 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		DCBB17392AE6F9D1002D48D7 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		DCBB173A2AE6F9D1002D48D7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		DCBB173B2AE6F9D1002D48D7 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		DCBB173C2AE6F9D1002D48D7 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		DCBB173D2AE6F9D1002D48D7 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		DCBB173E2AE6F9D1002D48D7 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		DCBB173F2AE6F9D1002D48D7 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		DCBB17402AE6F9D1002D48D7 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		DCBB17462AE6F9E2002D48D7 /* task.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = task.sqlite; sourceTree = "<group>"; };
+		DCBB17492AE6FA03002D48D7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DCF4B8CC2AE5D76300E58C9D /* iOS Basic ToDo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Basic ToDo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF4B8CF2AE5D76300E58C9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCF4B8D12AE5D76300E58C9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,11 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DCBB17482AE6FA02002D48D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCBB17492AE6FA03002D48D7 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCF4B8C32AE5D76300E58C9D = {
 			isa = PBXGroup;
 			children = (
 				DCF4B8CE2AE5D76300E58C9D /* iOS Basic ToDo App */,
 				DCF4B8CD2AE5D76300E58C9D /* Products */,
+				DCBB17482AE6FA02002D48D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +119,19 @@
 				DCF4B8D82AE5D76500E58C9D /* Assets.xcassets */,
 				DCF4B8DA2AE5D76500E58C9D /* LaunchScreen.storyboard */,
 				DCF4B8DD2AE5D76500E58C9D /* Info.plist */,
+				DCBB17462AE6F9E2002D48D7 /* task.sqlite */,
+				DCBB173A2AE6F9D1002D48D7 /* FMDatabase.h */,
+				DCBB17362AE6F9D1002D48D7 /* FMDatabase.m */,
+				DCBB173B2AE6F9D1002D48D7 /* FMDatabaseAdditions.h */,
+				DCBB17392AE6F9D1002D48D7 /* FMDatabaseAdditions.m */,
+				DCBB173C2AE6F9D1002D48D7 /* FMDatabasePool.h */,
+				DCBB17372AE6F9D1002D48D7 /* FMDatabasePool.m */,
+				DCBB173E2AE6F9D1002D48D7 /* FMDatabaseQueue.h */,
+				DCBB17402AE6F9D1002D48D7 /* FMDatabaseQueue.m */,
+				DCBB173F2AE6F9D1002D48D7 /* FMDB.h */,
+				DCBB173D2AE6F9D1002D48D7 /* FMResultSet.h */,
+				DCBB17382AE6F9D1002D48D7 /* FMResultSet.m */,
+				DCBB17352AE6F9D0002D48D7 /* iOS Basic ToDo App-Bridging-Header.h */,
 			);
 			path = "iOS Basic ToDo App";
 			sourceTree = "<group>";
@@ -204,6 +246,7 @@
 				TargetAttributes = {
 					DCF4B8CB2AE5D76300E58C9D = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -235,6 +278,7 @@
 			files = (
 				DCF4B8DC2AE5D76500E58C9D /* LaunchScreen.storyboard in Resources */,
 				DCF4B8D92AE5D76500E58C9D /* Assets.xcassets in Resources */,
+				DCBB17472AE6F9E2002D48D7 /* task.sqlite in Resources */,
 				DCF4B8D72AE5D76300E58C9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,15 +292,20 @@
 			files = (
 				DCF4B8D42AE5D76300E58C9D /* HomePage.swift in Sources */,
 				DCF4B8F12AE5E81200E58C9D /* TaskCell.swift in Sources */,
+				DCBB17432AE6F9D2002D48D7 /* FMResultSet.m in Sources */,
+				DCBB17422AE6F9D2002D48D7 /* FMDatabasePool.m in Sources */,
 				DCF4B9022AE5F39E00E58C9D /* HomePageViewModel.swift in Sources */,
+				DCBB17412AE6F9D1002D48D7 /* FMDatabase.m in Sources */,
 				DCF4B8E42AE5E6F100E58C9D /* AddTaskPage.swift in Sources */,
 				DCF4B9042AE5F3A700E58C9D /* AddTaskPageViewModel.swift in Sources */,
 				DCF4B8D02AE5D76300E58C9D /* AppDelegate.swift in Sources */,
+				DCBB17452AE6F9D2002D48D7 /* FMDatabaseQueue.m in Sources */,
 				DCF4B9062AE5F3B000E58C9D /* DetailPageViewModel.swift in Sources */,
 				DCF4B8E62AE5E6FA00E58C9D /* DetailPage.swift in Sources */,
 				DCF4B8FF2AE5F37200E58C9D /* TasksDaoRepository.swift in Sources */,
 				DCF4B8ED2AE5E79F00E58C9D /* Tasks.swift in Sources */,
 				DCF4B8D22AE5D76300E58C9D /* SceneDelegate.swift in Sources */,
+				DCBB17442AE6F9D2002D48D7 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3755NX4L2K;
@@ -424,6 +474,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmeterkut.iOS-Basic-ToDo-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS Basic ToDo App/iOS Basic ToDo App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -434,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3755NX4L2K;
@@ -452,6 +505,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmeterkut.iOS-Basic-ToDo-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS Basic ToDo App/iOS Basic ToDo App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
