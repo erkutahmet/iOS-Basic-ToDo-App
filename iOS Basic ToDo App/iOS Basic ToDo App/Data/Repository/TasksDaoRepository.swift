@@ -11,38 +11,90 @@ import RxSwift
 class TasksDaoRepository {
     var tasksList = BehaviorSubject<[Tasks]>(value: [Tasks]())
     
+    let db: FMDatabase?
+    
+    init() {
+        let targetPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let databaseURL = URL(fileURLWithPath: targetPath).appendingPathComponent("task.sqlite")
+        
+        db = FMDatabase(path: databaseURL.path())
+    }
+    
     func saveTask(taskName: String) {
-        print("Task Saved: \(taskName)")
+        db?.open()
+        do {
+            if taskName != String() {
+                try db!.executeUpdate("INSERT INTO tasks (task_name) VALUES(?)", values: [taskName])
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
     
     func updateTask(taskId: Int, taskName: String) {
-        print("Task Updated: \(taskId) - \(taskName)")
-        uploadTasks()
+        db?.open()
+        do {
+            if taskName != String() {
+                try db!.executeUpdate("UPDATE tasks SET task_name = ? WHERE task_id = ?", values: [taskName, taskId])
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        db?.close()
+
     }
     
     func deleteTask(taskId: Int) {
-        print("\(taskId) -> deleted!")
-        uploadTasks()
+        db?.open()
+        do {
+            try db!.executeUpdate("DELETE FROM tasks WHERE task_id = ?", values: [taskId])
+            uploadTasks()
+        } catch {
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
     
     func searchTask(searchText: String) {
-        print("-> \(searchText)")
+        db?.open()
+        var list = [Tasks]()
+        
+        do {
+            let rs = try db!.executeQuery("SELECT * FROM tasks WHERE task_name LIKE '%\(searchText)%", values: nil)
+            
+            while rs.next() {
+                let task = Tasks(task_id: Int(rs.string(forColumn: "task_id"))!,
+                                 task_name: rs.string(forColumn: "task_name")!)
+                
+                list.append(task)
+            }
+            tasksList.onNext(list)
+        } catch {
+            print(error.localizedDescription)
+        }
+    
+        db?.close()
     }
     
     func uploadTasks() {
+        db?.open()
         var list = [Tasks]()
-        let t1 = Tasks(task_id: 1, task_name: "Feed dog")
-        let t2 = Tasks(task_id: 2, task_name: "Write some code.")
-        let t3 = Tasks(task_id: 3, task_name: "Make food")
-        let t4 = Tasks(task_id: 4, task_name: "Go shopping")
-        let t5 = Tasks(task_id: 5, task_name: "Seen a doctor")
         
-        list.append(t1)
-        list.append(t2)
-        list.append(t3)
-        list.append(t4)
-        list.append(t5)
-        
-        tasksList.onNext(list)
+        do {
+            let rs = try db!.executeQuery("SELECT * FROM tasks", values: nil)
+            
+            while rs.next() {
+                let task = Tasks(task_id: Int(rs.string(forColumn: "task_id"))!,
+                                 task_name: rs.string(forColumn: "task_name")!)
+                
+                list.append(task)
+            }
+            
+            tasksList.onNext(list)
+        } catch {
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
 }

@@ -80,7 +80,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To Do" id="oTc-xl-tAt">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="51R-kJ-LQD">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="51R-kJ-LQD">
                             <connections>
                                 <segue destination="1jA-St-dl5" kind="show" id="YpH-aS-6nC"/>
                             </connections>
