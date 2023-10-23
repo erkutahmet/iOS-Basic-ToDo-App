@@ -61,7 +61,7 @@ class TasksDaoRepository {
         var list = [Tasks]()
         
         do {
-            let rs = try db!.executeQuery("SELECT * FROM tasks WHERE task_name LIKE '%\(searchText)%", values: nil)
+            let rs = try db!.executeQuery("SELECT * FROM tasks WHERE task_name LIKE '%\(searchText)%'", values: nil)
             
             while rs.next() {
                 let task = Tasks(task_id: Int(rs.string(forColumn: "task_id"))!,
